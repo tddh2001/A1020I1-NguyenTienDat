@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sophut = parseInt(prompt("Nhập số phút:"));
+        let phi = 0;
+        const phicodinh = 25;
+        if (sophut > 200) {
+            phi = (sophut - 200)*200+150*400+50*600;
+        } else if (sophut > 50) {
+            phi = (sophut - 50)*400+50*600;
+        } else {
+            phi = sophut * 600;
+        }
+        tong = 0.01 * phi + phicodinh;
+        alert("Bạn đã goi" + sophut + "phut");
+        alert("Số tiền phải nộp của bạn là: " +tong);
+    </script>
+</body>
+</html>

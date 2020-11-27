@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Doanh_So = parseInt(prompt("Nhập tổng doanh số (đơn vị: triệu vnd):"));
+        let Hoa_Hong;   
+        if (Doanh_So <= 100000000) {
+            Hoa_Hong = Doanh_So * 5 / 100 ;
+            alert("Hoa hồng nhận được: " + Hoa_Hong);
+        } else if (Doanh_So <= 300000000) {
+            Hoa_Hong = Doanh_So * 10 / 100 ;
+            alert("Hoa hồng nhận được: " + Hoa_Hong);
+        } else if (Doanh_So > 300000000) {
+            Hoa_Hong = Doanh_So * 20 / 100 ;
+            alert("Hoa hồng nhận được: " + Hoa_Hong);
+        }
+    </script>
+</body>
+</html>

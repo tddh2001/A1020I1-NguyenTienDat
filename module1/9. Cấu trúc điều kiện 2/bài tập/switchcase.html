@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="month">
+    <button type="button" onclick="date()">tính số ngày</button>
+    <p id="text"></p>
+    <script>
+        function date() {
+            a = document.getElementById('month').value;
+            a = parseInt(a);
+            switch (a) {
+                case 1:
+                    text = "tháng 1 có 31 ngày.";
+                    break;
+                case 2:
+                    text = "tháng 2 có 28 hoặc 29 ngày.";
+                    break;
+                case 3:
+                    text = "tháng 3 có 31 ngày.";
+                    break;
+                case 4:
+                    text = "tháng 4 có 30 ngày.";
+                    break;
+                case 5:
+                    text = "tháng 5 có 31 ngày.";
+                    break;
+                case 6:
+                    text = "tháng 6 có 30 ngày.";
+                    break;
+                case 7:
+                    text = "tháng 7 có 31 ngày.";
+                    break;
+                case 8:
+                    text = "tháng 8 có 31 ngày.";
+                    break;
+                case 9:
+                    text = "tháng 9 có 30 ngày.";
+                    break;
+                case 10:
+                    text = "tháng 10 có 31 ngày.";
+                    break;
+                case 11:
+                    text = "tháng 11 có 30 ngày.";
+                    break;
+                case 12:
+                    text = "tháng 12 có 31 ngày.";
+                    break;
+                default:
+                    text = "._.";
+                    break;
+            }
+            document.getElementById('text').innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
