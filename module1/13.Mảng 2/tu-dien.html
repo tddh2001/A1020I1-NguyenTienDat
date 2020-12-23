@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="english">
+    <input type="button" value="Tìm kiếm" onclick="chuyendoi()">
+    <br>
+    <p id="result"></p>
+    <script>
+        function chuyendoi() {
+            let el = document.getElementById('english').value;
+            let vietnam = ["Xin chào", "Xin lỗi", "Cám ơn", "Tạm biệt"];
+            let english = ["Hello", "Sorry", "Thank you", "Good bye"];
+            for (var i = 0; i < english.length; i++) {
+                if (el == english[i]) {
+                el = vietnam[i];
+            }
+            result = "Result: " + el;
+            }
+
+            
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(c) {
+                this.c = c;
+            }
+            getF() {
+                return 1.8 * this.c + 32;
+            }
+            getKenvin() {
+                return 273.15 + this.c;
+            }
+        }
+        let temperature = new Temperature(50);
+        let f = temperature.getF();
+        let kenvin = temperature.getKenvin();
+        document.write("Độ F: "+f);
+        document.write("</br>");
+        document.write("Độ Kenvin: "+kenvin);
+    </script>
+</body>
+
+</html>

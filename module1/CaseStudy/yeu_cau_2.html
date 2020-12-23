@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table cellspacing="10" style="font-size: 150%;" align="left">
+        <tr>
+            <td><span>1.Show Information Customer.</span></td>
+            <td><button type="button" onclick="showInfo()">></button></td>
+        </tr>
+        <tr>
+            <td><span>2.Edit Information Customer.</span></td>
+            <td><button type="button" onclick="editInfo()">></button></td>
+        </tr>
+        <tr>
+            <td><span>3.Show the amount to be paid after discount.</span></td>
+            <td><button type="button" onclick="showPrice()">></button></td>
+        </tr>
+    </table>
+    <table cellspacing="10" style="font-size: 150%;" align="center">
+        <tr>
+            <td>
+                1.Name: <span id="textName"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2.Id Card: <span id="textIdCard"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3.Date Of Birth: <span id="textDateOfBirth"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                4.Email: <span id="textEmail"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                5.Address: <span id="textAddress"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                6.Type Customers: <span id="textTypeCustomers"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                7.Discount: <span id="textDiscount"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                8.Quantity Included: <span id="textQuantityIncluded"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                9.Rent Days: <span id="textRentDays"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                10.Type Services: <span id="textTypeServices"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                11.Type Rooms: <span id="textTypeRooms"> </span>
+            </td>
+        </tr>
+    </table>
+    <script>
+        let name = "Đạt";
+        let idCard = "197385811";
+        let dateOfBirth = "18/11/2001";
+        let email = "ntdat.19it5@vku.udn.vn";
+        let address = "Quảng Trị";
+        let typeCustomers = "Diamond";
+        let discount = 30;
+        let quantityIncluded = 2;
+        let rentDays = 2;
+        let typeServices = "Villa";
+        let typeRooms = "Vip";
+        let totalPay;
+
+
+        function showInfo() {
+            document.getElementById('textName').innerHTML = name;
+            document.getElementById('textIdCard').innerHTML = idCard;
+            document.getElementById('textDateOfBirth').innerHTML = dateOfBirth;
+            document.getElementById('textEmail').innerHTML = email;
+            document.getElementById('textAddress').innerHTML = address;
+            document.getElementById('textTypeCustomers').innerHTML = typeCustomers;
+            document.getElementById('textDiscount').innerHTML = discount;
+            document.getElementById('textQuantityIncluded').innerHTML = quantityIncluded;
+            document.getElementById('textRentDays').innerHTML = rentDays;
+            document.getElementById('textTypeServices').innerHTML = typeServices;
+            document.getElementById('textTypeRooms').innerHTML = typeRooms;
+        }
+
+        function editInfo() {
+            document.getElementById('textName').innerHTML = name;
+            document.getElementById('textIdCard').innerHTML = idCard;
+            document.getElementById('textDateOfBirth').innerHTML = dateOfBirth;
+            document.getElementById('textEmail').innerHTML = email;
+            document.getElementById('textAddress').innerHTML = address;
+            document.getElementById('textTypeCustomers').innerHTML = typeCustomers;
+            document.getElementById('textDiscount').innerHTML = discount;
+            document.getElementById('textQuantityIncluded').innerHTML = quantityIncluded;
+            document.getElementById('textRentDays').innerHTML = rentDays;
+            document.getElementById('textTypeServices').innerHTML = typeServices;
+            document.getElementById('textTypeRooms').innerHTML = typeRooms;
+            let edit = parseInt(prompt("Edit Information Customer."));
+            switch (edit) {
+                case 1:
+                    name = prompt("Enter name: ");
+                    break;
+                case 2:
+                    idCard = prompt("Enter id card: ");
+                    break;
+                case 3:
+                    dateOfBirth = prompt("Enter date of birth: ");
+                    break;
+                case 4:
+                    email = prompt("Enter email: ");
+                    break;
+                case 5:
+                    address = prompt("Enter address: ");
+                    break;
+                case 6:
+                    typeCustomers = prompt("Enter type customers: ");
+                    break;
+                case 7:
+                    discount = prompt("Enter discount: ");
+                    break;
+                case 8:
+                    quantityIncluded = prompt("Enter quantity included: ");
+                    break;
+                case 9:
+                    rentDays = prompt("Enter id rent days: ");
+                    break;
+                case 10:
+                    typeServices = prompt("Enter id type services: ");
+                    break;
+                case 11:
+                    typeRooms = prompt("Enter type rooms: ");
+                    break;
+                default:
+                    alert("Sự lựa chọn của bạn không có trong danh sách.");
+                    break;
+            }
+        }
+
+        function showPrice() {
+            document.getElementById('textAddress').innerHTML = address;
+            document.getElementById('textRentDays').innerHTML = rentDays;
+            document.getElementById('textTypeServices').innerHTML = typeServices;
+            let money = 0;
+            if (typeServices == "Villa") {
+                money = 500;
+            } else if (typeServices == "House") {
+                money = 300;
+            } else if (typeServices == "Room") {
+                money = 100;
+            }
+            let temp = 0;
+            if (address === "Đà Nẵng") {
+                temp += 20;
+            } else if (address === "Huế") {
+                temp += 10;
+            } else if (address === "Quảng Nam") {
+                temp += 5;
+            }
+            if (rentDays > 7) {
+                temp += 30;
+            } else if (rentDays > 5) {
+                temp += 20;
+            } else if (rentDays > 2) {
+                temp += 10;
+            }
+            alert("Pay: " + (money * rentDays - temp));
+        }
+    </script>
+</body>
+
+</html>

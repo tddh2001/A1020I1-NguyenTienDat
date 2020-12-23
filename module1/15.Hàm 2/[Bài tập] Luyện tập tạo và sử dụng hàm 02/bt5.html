@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Nhập số thứ nhất:"));
+        let b = parseInt(prompt("Nhập số thứ 2:"));
+        let c = parseInt(prompt("Nhập số thứ 3:"));
+        function gia_tri_nho_nhat() {
+            if (a > b) {
+                if (b > c) {
+                    alert(c + " là số nhỏ nhất.");
+                }
+                else{
+                    alert(b + " là số nhỏ nhất.");
+                }
+            }
+            else{
+                if (a < c) {
+                    alert(a + " là số nhỏ nhất");
+                }
+                else{
+                    alert(c + " là số bé nhất");
+                }
+            }
+        }
+        a = gia_tri_nho_nhat();
+        b = gia_tri_nho_nhat();
+        c = gia_tri_nho_nhat();
+
+    </script>
+</body>
+</html>
