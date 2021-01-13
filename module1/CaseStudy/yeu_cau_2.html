@@ -22,7 +22,7 @@
             <td><button type="button" onclick="showPrice()">></button></td>
         </tr>
     </table>
-    <table cellspacing="10" style="font-size: 150%;" align="center">
+    <table cellspacing="10" style="font-size: 150%; margin-left: auto; margin-right: auto;">
         <tr>
             <td>
                 1.Name: <span id="textName"></span>
@@ -121,18 +121,57 @@
             document.getElementById('textTypeServices').innerHTML = typeServices;
             document.getElementById('textTypeRooms').innerHTML = typeRooms;
             let edit = parseInt(prompt("Edit Information Customer."));
+            let checkValid = false;
+            let regexEmail =
+                /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            let regexBirthday = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+            let regexCMND = /^[\d]{9,9}$/;
+            let tempName = "";
             switch (edit) {
                 case 1:
                     name = prompt("Enter name: ");
+                    name = name.toLowerCase();
+                    for (let i = 0; i < name.length; i++) {
+                        if (i === 0 || name.charAt(i - 1) === " ") {
+                            tempName += name.charAt(i).toUpperCase();
+                            continue;
+                        }
+                        tempName += name.charAt(i);
+                    }
+                    name = tempName;
                     break;
                 case 2:
-                    idCard = prompt("Enter id card: ");
+                    do {
+                        idCard = prompt("Id Card: ");
+                        if (regexCMND.test(idCard)) {
+                            checkValid = true;
+                        } else {
+                            alert("Incorrect.");
+                        }
+                    } while (!checkValid)
+                    checkValid = false;
                     break;
                 case 3:
-                    dateOfBirth = prompt("Enter date of birth: ");
+                    do {
+                        dateOfBirth = prompt("Date of birth: ");
+                        if (regexBirthday.test(dateOfBirth)) {
+                            checkValid = true;
+                        } else {
+                            alert("Incorrect.");
+                        }
+                    } while (!checkValid)
+                    checkValid = false;
                     break;
                 case 4:
-                    email = prompt("Enter email: ");
+                    do {
+                        email = prompt("Email: ");
+                        if (regexEmail.test(email)) {
+                            checkValid = true;
+                        } else {
+                            alert("incorrect");
+                        }
+                    } while (!checkValid)
+                    checkValid = false;
                     break;
                 case 5:
                     address = prompt("Enter address: ");
@@ -159,6 +198,7 @@
                     alert("Sự lựa chọn của bạn không có trong danh sách.");
                     break;
             }
+            showInfo();
         }
 
         function showPrice() {

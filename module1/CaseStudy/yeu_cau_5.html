@@ -171,11 +171,10 @@
                 temp += i + ". Name: " + arrListCustomer[i][0] + "\n";
             }
             let chooseDelete = parseInt(prompt(temp));
-            let check = parseInt(prompt("Bạn có chắc chắn xóa khách hàng này không?" + "\n1.Yes   2.No"));
-            if (check === 1) {
+            let check = confirm("Bạn có chắc chắn xóa khách hàng này không?");
+            if (check == true) {
                 alert("Xóa thành công.");
                 arrListCustomer.splice(chooseDelete, 1);
-
             } else {
                 alert("Trở lại");
             }
