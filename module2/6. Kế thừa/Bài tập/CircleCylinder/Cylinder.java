@@ -10,28 +10,8 @@ public class Cylinder extends Circle {
         this.height = height;
     }
 
-    @Override
-    public double getRadius() {
-        return super.getRadius();
-    }
-
-    @Override
-    public String getColor() {
-        return super.getColor();
-    }
-
     public double getHeight() {
         return height;
-    }
-
-    @Override
-    public void setColor(String color) {
-        super.setColor(color);
-    }
-
-    @Override
-    public void setRadius(double radius) {
-        super.setRadius(radius);
     }
 
     public void setHeight(double height) {

@@ -1,8 +1,8 @@
 package Point2DPoint3D;
 
 public class Point2D {
-    public float x;
-    public float y;
+    protected float x;
+    protected float y;
 
     public Point2D(){
     }
