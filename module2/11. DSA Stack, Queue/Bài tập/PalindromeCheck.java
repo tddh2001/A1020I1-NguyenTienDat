@@ -4,7 +4,11 @@ import java.util.Stack;
 
 public class PalindromeCheck {
     public static void main(String[] args) {
-        String palindrome = "Able was i ere i saw Elba";
+        String palindrome = "Hello olleh";
+        PalindromeTest(palindrome);
+    }
+
+    private static void PalindromeTest(String palindrome) {
         palindrome = palindrome.toLowerCase();
         Stack<Character> stack = new Stack<>();
         for (int i=0; i<palindrome.length(); i++){
@@ -20,7 +24,7 @@ public class PalindromeCheck {
                 flag = false;
             }
         }
-        if (flag = true) {
+        if (flag == true) {
             System.out.println(palindrome+" is a Palindrome");
         }
         else {
