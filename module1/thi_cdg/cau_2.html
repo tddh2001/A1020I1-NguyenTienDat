@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function kiemTraDiem() {
+            let check = false;
+            let diem;
+            do {
+                diem = parseInt(prompt("Nhập điểm học sinh:"));
+                if (diem < 0 || diem > 100) {
+                    alert("Điểm phải lớn hơn 0 và bé hơn 100.");
+                    continue;
+                }
+                check = true;
+            }
+            while (!check)
+            check = false;
+            if (diem > 47) {
+                if ((diem + 2) % 5 == 0) {
+                    diem += 2;
+                } else if ((diem + 1) % 5 == 0) {
+                    diem += 1;
+                }
+                document.write("Điểm: " + diem + ". Đậu.");
+            } else {
+                document.write("Điểm: " + diem + ". Trượt.");
+            }
+        }
+        kiemTraDiem();
+    </script>
+</body>
+
+</html>
