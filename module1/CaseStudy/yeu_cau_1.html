@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Enter Your Information</h1>
+    </center>
+    <table style="font-size: 150%;" align="left">
+        <tr>
+            <td>
+                <p>Name</p>
+            </td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Id Card</p>
+            </td>
+            <td><input type="text" id="idCard"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Day Of Birth</p>
+            </td>
+            <td><input type="date" id="dateOfBirth"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Email</p>
+            </td>
+            <td><input type="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Address</p>
+            </td>
+            <td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Type Customers</p>
+            </td>
+            <td><select name="typeCustomers" id="typeCustomers">
+                    <option value="member">Member</option>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                    <option value="diamond">Diamond</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Discount</p>
+            </td>
+            <td><input type="text" id="discount"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Quantity Included</p>
+            </td>
+            <td><input type="text" id="quantityIncluded"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Rent Days</p>
+            </td>
+            <td><input type="text" id="rentDays"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Type Services</p>
+            </td>
+            <td><select name="typeServices" id="typeServices">
+                    <option value="room">Room 100&#36;/day</option>
+                    <option value="house">House 300&#36;/day</option>
+                    <option value="villa">Villa 500&#36;/day</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Type Rooms</p>
+            </td>
+            <td><select name="typeRooms" id="typeRooms">
+                    <option value="normal">Normal</option>
+                    <option value="business">Business</option>
+                    <option value="vip">Vip</option>
+                </select></td>
+        </tr>
+        <tr>
+            <th colspan="2"><button type="button" onclick="register()">Register</button></th>
+        </tr>
+    </table>
+
+    <table style="font-size: 150%;" align="center">
+        <tr>
+            <td>
+                <p id="textName"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textIdCard"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textDateOfBirth"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textEmail"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textAddress"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textTypeCustomers"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textDiscount"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textQuantityIncluded"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textRentDays"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textTypeServices"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textTypeRooms"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="textPay"></p>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function register() {
+            let name = document.getElementById('name').value;
+            let textName = "Name: " + name;
+            let idCard = document.getElementById('idCard').value;
+            let textIdCard = "Id Card: " + idCard;
+            let dateOfBirth = document.getElementById('dateOfBirth').value;
+            let textDateOfBirth = "Date Of Birth: " + dateOfBirth;
+            let email = document.getElementById('email').value;
+            let textEmail = "Email: " + email;
+            let address = document.getElementById('address').value;
+            let textAddress = "Address: " + address;
+            let typeCustomers = document.getElementById('typeCustomers').value;
+            let textTypeCustomers = "Type Customers: " + typeCustomers;
+            let discount = document.getElementById('discount').value;
+            discount = parseInt(discount);
+            let textDiscount = "Discount: " + discount;
+            let quantityIncluded = document.getElementById('quantityIncluded').value;
+            let textQuantityIncluded = "Quantity Included: " + quantityIncluded;
+            let rentDays = document.getElementById('rentDays').value;
+            rentDays = parseInt(rentDays);
+            let textRentDays = "Rent Days: " + rentDays;
+            let typeServices = document.getElementById('typeServices').value;
+            let textTypeServices = "Type Services: " + typeServices;
+            let typeRooms = document.getElementById('typeRooms').value;
+            let textTypeRooms = "Type Rooms: " + typeRooms;
+            let pay;
+            pay = parseInt(pay);
+            
+            switch (typeServices) {
+                case "room":
+                    pay = 100 * rentDays * (1 - discount / 100);
+                    break;
+                case "house":
+                    pay = 300 * rentDays * (1 - discount / 100);
+                    break;
+                case "villa":
+                    pay = 500 * rentDays * (1 - discount / 100);
+                    break;
+            }
+            let textPay = "Pay: "+pay;
+            document.getElementById('textName').innerHTML = textName;
+            document.getElementById('textIdCard').innerHTML = textIdCard;
+            document.getElementById('textDateOfBirth').innerHTML = textDateOfBirth;
+            document.getElementById('textEmail').innerHTML = textEmail;
+            document.getElementById('textAddress').innerHTML = textAddress;
+            document.getElementById('textTypeCustomers').innerHTML = textTypeCustomers;
+            document.getElementById('textDiscount').innerHTML = textDiscount;
+            document.getElementById('textQuantityIncluded').innerHTML = textQuantityIncluded;
+            document.getElementById('textRentDays').innerHTML = textRentDays;
+            document.getElementById('textTypeServices').innerHTML = textTypeServices;
+            document.getElementById('textTypeRooms').innerHTML = textTypeRooms;
+            document.getElementById('textPay').innerHTML = textPay;
+        }
+    </script>
+</body>
+
+</html>

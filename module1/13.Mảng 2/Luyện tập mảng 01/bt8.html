@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let n=prompt("nhập 1 chuỗi:");
+    let a=[];
+    for(let i=0;i<n;i++){
+        a[i]= parseInt( prompt("nhập số thứ "+i));
+    }
+    a.sort(function(a, b){return b - a});
+    alert("Result:"+a);
+</script>
+​
+</body>
+</html>

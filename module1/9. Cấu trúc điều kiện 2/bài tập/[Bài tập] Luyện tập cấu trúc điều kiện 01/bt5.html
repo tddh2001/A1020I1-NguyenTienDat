@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let diem_Bai_Kiem_Tra = parseInt(prompt("Nhập điểm bài kiểm tra:"));
+        let diem_Thi_Giua_Ky = parseInt(prompt("Nhập điểm thi giữa kỳ:"));
+        let diem_Thi_Cuoi_Ky = parseInt(prompt("Nhập điểm thi cuối kỳ:"));
+        let diem_Trung_Binh = (diem_Bai_Kiem_Tra + diem_Thi_Giua_Ky + diem_Thi_Cuoi_Ky) / 3;
+
+        if (diem_Trung_Binh >= 8.5) {
+            alert("Xếp loại giỏi");
+        } else if (diem_Trung_Binh >= 6.5) {
+            alert("Xếp loại khá");
+        } else if (diem_Trung_Binh >= 3.5) {
+            alert("Xếp loại trung bình");
+        } else {
+            alert("Xếp loại yếu");
+        }
+    </script>
+</body>
+
+</html>

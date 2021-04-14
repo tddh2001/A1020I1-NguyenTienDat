@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="hinh1" src="luffy1.jpg" onclick="changeImg(1)" style="width: 600px;height: 120px"><br>
+    <img id="hinh2" src="songoku2.jpg" onclick="changeImg(2)" style="width: 600px;height: 120px"><br>
+    <img id="hinh3" src="naruto3.jpg" onclick="changeImg(3)" style="width: 600px;height: 120px">
+    <script>
+        let anh1 = document.getElementById("hinh1");
+        let anh2 = document.getElementById("hinh2");
+        let anh3 = document.getElementById("hinh3");
+
+        function changeImg(choose) {
+            switch (choose) {
+                case 1:
+                    if (anh1.getAttribute("src") === 'luffy1.jpg') {
+                        anh1.src = 'songoku1.jpg';
+                    } else if (anh1.getAttribute("src") === 'songoku1.jpg') {
+                        anh1.src = 'naruto1.jpg';
+                    } else {
+                        anh1.src = 'luffy1.jpg';
+                    }
+                    check();
+                    break;
+                case 2:
+                    if (anh2.getAttribute("src") === 'songoku2.jpg') {
+                        anh2.src = 'naruto2.jpg';
+                    } else if (anh2.getAttribute("src") === 'naruto2.jpg') {
+                        anh2.src = 'luffy2.jpg';
+                    } else {
+                        anh2.src = 'songoku2.jpg';
+                    }
+                    check();
+                    break;
+                case 3:
+                    if (anh3.getAttribute("src") === 'naruto3.jpg') {
+                        anh3.src = 'luffy3.jpg';
+                    } else if (anh3.getAttribute("src") === 'luffy3.jpg') {
+                        anh3.src = 'songoku3.jpg';
+                    } else {
+                        anh3.src = 'naruto3.jpg';
+                    }
+                    check();
+                    break;
+            }
+        }
+        function check() {
+            if (anh1.getAttribute("src") === 'luffy1.jpg' && anh2.getAttribute("src") === 'luffy2.jpg' && anh3.getAttribute("src") === 'luffy3.jpg') {
+                alert("Welcome Luffy");
+            }
+            if (anh1.getAttribute("src") === 'songoku1.jpg' && anh2.getAttribute("src") === 'songoku2.jpg' && anh3.getAttribute("src") === 'songoku3.jpg') {
+                alert("Welcome Songoku");
+            }
+            if (anh1.getAttribute("src") === 'naruto1.jpg' && anh2.getAttribute("src") === 'naruto2.jpg' && anh3.getAttribute("src") === 'naruto3.jpg') {
+                alert("Welcome Naruto");
+            }
+        }
+    </script>
+</body>
+
+</html>

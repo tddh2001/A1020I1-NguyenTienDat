@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = [32,65,21,7,11,62,77,2,90,12];
+        let giaTriLonNhat = Math.max.apply(Math, a);
+        let total = 0;
+        document.write("Giá trị lớn nhất: "+giaTriLonNhat);
+        for (let i = 0; i < a.length; i++) {
+            total += a[i];
+        }
+        let giaTriTrungBinh = total / a.length;
+        document.write("<br>");
+        document.write("Giá trị trung binh: "+giaTriTrungBinh);
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><input id="nhap_so" type="text"></td>
+            <td>
+                <select name="chieu_dai" id="chieu_dai">
+                    <option value="foot">foot</option>
+                    <option value="meters">meters</option>
+                </select>
+            <td>
+                <input type="button" value="Chuyển đổi" onclick="chuyendoi()">
+            </td>
+        </tr>
+            <td>
+                <p id="result"></p>
+            </td>
+    </table>
+    
+    <script>
+      
+
+
+        function footToMeter(foot){
+        let meter=parseFloat;
+         foot=parseFloat(foot);
+        meter = 0.305 * foot;
+        return meter;
+    }
+
+        function meterToFoot(meter){
+        let foot=parseFloat;
+        meter=parseFloat(meter);
+        foot = 3.279 * meter;
+        return foot;
+    }
+
+        function chuyendoi() {
+            let chi_so = document.getElementById("nhap_so").value;
+        let chieu_dai1 = document.getElementById("chieu_dai").value;
+            switch (chieu_dai1) {
+                case "foot":
+                    result = footToMeter(chi_so);
+                    break;
+            
+                case "meters":
+                    result = meterToFoot(chi_so);
+                    break;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

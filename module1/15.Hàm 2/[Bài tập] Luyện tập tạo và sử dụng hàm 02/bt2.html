@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let r = parseInt(prompt("Nhập bán kính hình tròn:"));
+        function dien_tich_hinh_tron() {
+            let s = r*r*Math.PI;
+            return s;
+        }
+
+        function chu_vi_hinh_tron() {
+            let c = 2*r*Math.PI;
+            return c;
+        }
+        s = dien_tich_hinh_tron();
+        c = chu_vi_hinh_tron();
+        alert("Chu vi hình tròn:" + c);
+        alert("Diện tích hình tròn:" + s);
+    </script>
+</body>
+</html>

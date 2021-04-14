@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Điền vào ô vuông phía dưới</h1>
+        <form name="f">
+            <textarea name="txt" cols="30" rows="10" onkeydown="typeTextarea()"></textarea>
+        </form>
+    </center>
+    <script>
+        let a = new Array()
+        let n="";
+        a[1]='H';
+        a[2]='e';
+        a[3]='l';
+        a[4]='l';
+        a[5]='o';
+        a[6]=' ';
+        a[7]='B';
+        a[8]='r';
+        a[9]='o';
+        a[10]='t';
+        a[11]='h';
+        a[12]='e';
+        a[13]='r';
+        function typeTextarea() {
+            t = document.f.txt.value;
+            j = t.length;
+            if (j > 0) {
+                for (let i = 1; i <= j; i++) {
+                    n = n + a[i];
+                    if (i == 14) {
+                        document.f.txt.value = "";
+                        n = "";
+                    } 
+                }
+            }
+            document.f.txt.value = n;
+            n="";
+            setTimeout("typeTextarea()", 10);
+        }
+    </script>
+</body>
+</html>

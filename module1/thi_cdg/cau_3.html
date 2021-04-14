@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt("nhập số phần tử:");
+        let arr = [];
+        if (n <= 50 || n > 0) {
+            for (let i = 0; i < n; i++) {
+                arr[i] = parseInt(prompt("nhập số thứ " + i));
+            }
+        }
+        else{
+            alert("Số phần tử phải bé hơn 50.")
+        }
+        let k = parseInt(prompt("Nhập 1 số nguyên dương: "));
+        document.write("Các cặp số trong mảng thỏa mãn yêu cầu: ");
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr.length; j++) {
+                if ((arr[i] + arr[j]) % k == 0) {
+                    document.write("[" + arr[i]+ ","+arr[j] + "]" + ",");
+                }
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

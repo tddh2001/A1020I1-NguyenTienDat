@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: white;
+            color: blue;
+            padding: 15px 32px;
+            margin: 7px 7px;
+            cursor: pointer;
+            border-color: cornflowerblue;
+        }
+
+        input[type=text] {
+            float: left;
+            text-align: right;
+            border: none;
+            background: none;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form name="form">
+            <table border="1" style="border-collapse: collapse;">
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="inKetQua">
+                    </td>
+                </tr>
+                <tr>
+                    <th><button type="button" name="b1" value="1" onclick="Numbers(b1.value)">1</button></th>
+                    <th><button type="button" name="b2" value="2" onclick="Numbers(b2.value)">2</button></th>
+                    <th><button type="button" name="b3" value="3" onclick="Numbers(b3.value)">3</button></th>
+                    <th><button type="button" name="sum" value="+" onclick="Numbers(sum.value)">+</button></th>
+                </tr>
+                <tr>
+                    <th><button type="button" name="b4" value="4" onclick="Numbers(b4.value)">4</button></th>
+                    <th><button type="button" name="b5" value="5" onclick="Numbers(b5.value)">5</button></th>
+                    <th><button type="button" name="b6" value="6" onclick="Numbers(b6.value)">6</button></th>
+                    <th><button type="button" name="sub" value="-" onclick="Numbers(sub.value)">-</button></th>
+                </tr>
+                <tr>
+                    <th><button type="button" name="b7" value="7" onclick="Numbers(b7.value)">7</button></th>
+                    <th><button type="button" name="b8" value="8" onclick="Numbers(b8.value)">8</button></th>
+                    <th><button type="button" name="b9" value="9" onclick="Numbers(b9.value)">9</button></th>
+                    <th><button type="button" name="mul" value="*" onclick="Numbers(mul.value)">x</button></th>
+                </tr>
+                <tr>
+                    <th><button type="button" onclick="reset()">C</button></th>
+                    <th><button type="button" name="b0" value="0" onclick="Numbers(b0.value)">0</button></th>
+                    <th><button type="button" value="="
+                            onclick="inKetQua.value=eval(inKetQua.value)">=</button></th>
+                    <th><button type="button" name="div" value="/" onclick="Numbers(div.value)">/</button></th>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <script>
+        function Numbers(KetQua) {
+            form.inKetQua.value = form.inKetQua.value + KetQua;
+        }
+
+        function reset(KetQua) {
+            clear;
+        }
+    </script>
+</body>
+
+</html>
