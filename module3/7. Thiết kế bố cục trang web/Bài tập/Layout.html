@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 10px;
+        }
+
+        .row {
+            clear: both;
+        }
+
+        .head {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: auto;
+        }
+
+        ul.menu {
+            overflow: hidden;
+        }
+
+        ul.menu li {
+            float: left;
+        }
+
+        li a.menu1 {
+            display: block;
+            color: gray;
+            text-align: center;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .left-panel {
+            background: lightgray;
+            min-height: 400px;
+            padding: 5px;
+        }
+
+        .left-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .left-panel ul li {
+            color: gray;
+            margin-bottom: 5px;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .right-panel {
+            background: lightgray;
+            text-align: center;
+            padding: 5px;
+            min-height: 400px;
+        }
+
+        .footer {
+            background-color: gray;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .ads {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid;
+            margin: 10px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="row" style="margin: 0px;">
+            <div class="col-12">
+                <div class="head">
+                    <ul class="menu">
+                        <li style="float:left"><a class="menu1" href="">Logo</a></li>
+                        <li><a class="menu1" href="">Home</a></li>
+                        <li><a class="menu1" href="">About</a></li>
+                        <li><a class="menu1" href="">Projects</a></li>
+                        <li><a class="menu1" href="">Contact</a></li>
+                        <li style="float:right"><a class="menu1" href="">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin: 0px;">
+            <div class="col-3">
+                <div class="left-panel">
+                    <ul>
+                        <li><a href="">Link</a></li>
+                        <li><a href="">Link</a></li>
+                        <li><a href="">Link</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="center-panel">
+                    <h1>Hello World</h1>
+                    <h3>A "Hello, World!" program generally is a computer program that outputs or displays the message
+                        "Hello, World!".
+                        Such a program is very simple in most programming languages, and is often used to illustrate the
+                        basic syntax
+                        of a programming language. It is often the first program written by people learning to code</h3>
+                    <hr>
+                    <h3>It can also be used as a sanity test to make sure that a computer language is correctly
+                        installed,
+                        and
+                        that the operator understands how to use it.</h3>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="right-panel">
+                    <div class="ads">ADS</div>
+                    <div class="ads">ADS</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="footer">
+                    <p>Footer Text</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
