@@ -33,7 +33,25 @@
       <option name="presentableId" value="Default" />
       <updated>1618823284594</updated>
       <workItem from="1618823289955" duration="4000" />
+      <workItem from="1619613203824" duration="572000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="326" y="186" key="#Tomcat_Server" timestamp="1619613745756">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="326" y="186" key="#Tomcat_Server/0.0.1093.614@0.0.1093.614" timestamp="1619613745756" />
+    <state x="327" y="49" key="FileChooserDialogImpl" timestamp="1619613742674">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="327" y="49" key="FileChooserDialogImpl/0.0.1093.614@0.0.1093.614" timestamp="1619613742674" />
+    <state x="0" y="0" key="new project wizard" timestamp="1619613775079">
+      <screen x="0" y="0" width="1093" height="614" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1093.614@0.0.1093.614" timestamp="1619613775079" />
   </component>
 </project>
