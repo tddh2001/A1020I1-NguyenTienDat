@@ -7,8 +7,10 @@
 </head>
 
 <body>
-    <h1>Chương trình quản lý khách hàng.</h1>
-    <input type="button" value="Thêm mới NV" onclick="themMoi()">
+    <h1>Chương trình quản lý khách hàng</h1>
+    <input type="button" value="Thêm mới khách hàng" onclick="them()">
+    <input type="button" value="Sửa khách hàng" onclick="sua()">
+    <input type="button" value="Xóa khách hàng" onclick="xoa()">
     <p id="hienThi"></p>
     <br>
 
@@ -75,7 +77,7 @@
         danhSachKH.push(khachHang1);
         hienThi(danhSachKH);
 
-        function themMoi() {
+        function them() {
             let maKH = prompt("Nhập mã KH")
             let ten = prompt("Nhập tên")
             let sdt = prompt("Nhập số điện thoại")
@@ -83,6 +85,83 @@
             let email = prompt("Nhập email")
             let khachHang = new KhachHang(maKH, ten, sdt, diaChi, email);
             danhSachKH.push(khachHang);
+            hienThi(danhSachKH)
+        }
+
+        // function sua() {
+        //     let temp = "";
+        //     for (let i = 0; i < danhSach.length; i++) {
+        //         temp += i + ". Name: " + listCustomer[i].getName() + "\n";
+        //     }
+        //     let chooseDisplay = parseInt(prompt(temp));
+        //     let chooseEdit = parseInt(prompt("1.Mã khách hàng:" + listCustomer[chooseDisplay].getName() + "\n" +
+        //         "2.Tên:" + listCustomer[chooseDisplay].getCMND() + "\n" +
+        //         "3.Số điện thoại:" + listCustomer[chooseDisplay].getAddress() + "\n" +
+        //         "4.Địa chỉ:" + listCustomer[chooseDisplay].getTypeService() + "\n" +
+        //         "5.Email:" + listCustomer[chooseDisplay].getRentDays() + "\n"));
+        //         switch (chooseEdit) {
+        //         case 1: {
+        //             listCustomer[chooseDisplay].setName(prompt("Nhập tên: "));
+        //             break;
+        //         }
+        //         case 2: {
+        //             listCustomer[chooseDisplay].setCMND(prompt("Nhập CMND: "));
+        //             break;
+        //         }
+        //         case 3: {
+        //             listCustomer[chooseDisplay].setBirthDay(prompt("Ngày/tháng/năm sinh: "));
+        //             break;
+        //         }
+        //         case 4: {
+        //             listCustomer[chooseDisplay].setEmail(prompt("Nhập email: "));
+        //             break;
+        //         }
+        //         case 5: {
+        //             listCustomer[chooseDisplay].setAddress(prompt("Nhập địa chỉ: "));
+        //             break;
+        //         }
+        //         case 6: {
+        //             listCustomer[chooseDisplay].setTypeService(prompt("Loại dịch vụ: "));
+        //             break;
+        //         }
+        //         case 7: {
+        //             listCustomer[chooseDisplay].setTypeRoom(prompt("Loại phòng: "));
+        //             break;
+        //         }
+        //         case 8: {
+        //             listCustomer[chooseDisplay].setTypeCustomer(prompt("Loại khách hàng: "));
+        //             break;
+        //         }
+        //         case 9: {
+        //             listCustomer[chooseDisplay].setDiscount(prompt("Giảm giá: "));
+        //             break;
+        //         }
+        //         case 10: {
+        //             listCustomer[chooseDisplay].setQuantityIncluded(prompt("Số lượng đi kèm: "));
+        //             break;
+        //         }
+        //         case 11: {
+        //             listCustomer[chooseDisplay].setRentDays(prompt("Số ngày: "));
+        //             break;
+        //         }
+        //         default: {
+        //             alert("Số bạn chọn không hợp lệ.");
+        //         }
+        //     }
+        //     displayMainMenu();
+        // }
+
+        function xoa() {
+            let temp = "";
+            for (let i = 0; i < danhSachKH.length; i++) {
+                temp += i + ". Tên: " + danhSach[i].getTen() + "\n";
+            }
+            let chooseDelete = parseInt(prompt(temp));
+            let check = parseInt(prompt("Bạn có chắc chắn xóa khách hàng này không?" + "\n1.Yes   2.No"));
+            if (check === 1) {
+                alert("Xóa thành công.");
+                danhSachKH.splice(chooseDelete, 1);
+            }
             hienThi(danhSachKH)
         }
 

@@ -1,0 +1,274 @@
+body {
+    color: #ffffff;
+    background: #4d4a4a;
+    font-family: 'Roboto'!important;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+ ::selection {
+    /*Thay đổi màu nền khi bôi đen văn bản*/
+    background-color: #696969;
+}
+
+
+/*HEADER*/
+
+header {
+    left: 0;
+    top: 0;
+    overflow: visible;
+    position: fixed !important;
+    /*Cố định header và menu khi cuộn trang Web */
+    z-index: 1000;
+    width: 100%;
+    height: 200px;
+    background: rgba(247, 241, 207, 0.945);
+    /* opacity: 0.8; */
+    /*Điều chỉnh độ trong suốt của header*/
+}
+
+#head {
+    width: 95%;
+    height: 170px;
+    margin: auto;
+}
+
+#logo {
+    width: 13%;
+    height: 160px;
+    float: left;
+}
+
+#name-search {
+    width: 35%;
+    height: 160px;
+    float: left;
+    text-align: center;
+}
+
+.h2 {
+    color: red;
+}
+
+h3 {
+    color: white;
+}
+
+.search {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.icon_search {
+    width: 50px;
+    padding: 10px;
+    margin-left: -10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#map {
+    width: 32%;
+    height: 160px;
+    float: left;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.map {
+    font-size: 21px;
+    margin: 45px;
+}
+
+.icon_map {
+    float: left;
+    margin: 50px 10px;
+}
+
+#hotline {
+    width: 20%;
+    height: 160px;
+    float: left;
+}
+
+.hotline {
+    margin: 50px 20px 0 0;
+}
+
+.container-menu ul {
+    text-align: center;
+    background-color: #696969;
+    margin-top: -10px;
+    margin-left: -7px;
+    margin-right: -7px;
+    height: 51px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.container-menu ul li {
+    display: inline-block;
+}
+
+.container-menu ul li a {
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.container-menu ul li a.active {
+    background-color: #808080;
+}
+
+.container-menu ul li a:hover {
+    /*a:hover - Thay đổi các thuộc tính khi di chuột tới*/
+    background-color: #808080;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    /*Ẩn dropdown menu*/
+    position: absolute;
+    /*Các menu nằm trên cùng 1 hàng*/
+    background-color: #696969;
+    /*Màu nền của drop menu*/
+}
+
+.dropdown-content a {
+    /* Liên kết bên trong danh sách thả xuống */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    /*Hiển thị dropdown menu khi di chuột tới*/
+    display: block;
+}
+
+.slider {
+    width: 1200px;
+    height: 450px;
+    margin: 230px auto !important;
+    border-radius: 10px;
+    overflow: hidden;
+    /*ẩn slider*/
+    margin: auto;
+}
+
+.slides {
+    width: 500%;
+    height: 450px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 1200px;
+    height: 450px;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 1200px;
+    margin-top: -30px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    /*khoảng cách giữa các nút button*/
+    margin-right: 20px;
+}
+
+.manual-btn:hover {
+    /*Thay đổi background của button khi di chuột tới*/
+    background: red;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+
+/*css for automatic navigation*/
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 1200px;
+    justify-content: center;
+    margin-top: 420px;
+}
+
+.navigation-auto div {
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 20px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background: red;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background: red;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background: red;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background: red;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    background: #36444e;
+}
