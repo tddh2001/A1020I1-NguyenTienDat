@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "`user`")
-public class User {
+public class    User {
     @Id
     private String username;
     private String password;
@@ -60,4 +60,5 @@ public class User {
     public void setRoleList(Set<Role> roleList) {
         this.roleList = roleList;
     }
+
 }

@@ -1,24 +1,44 @@
 package com.codegym.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customer_id;
+    @Pattern(regexp = "^(KH-)[\\d]{4}$", message = "The customer ID has the format KH-XXXX (X : 0-9")
+    @NotBlank(message = "Not Blank!")
+    @Column(length = 50)
+    private String customer_id;
+    @NotBlank(message = "Not Blank!")
+    private String customer_name;
+    @Past(message = "Invalid")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date customer_birthday;
+    @Pattern(regexp = "^([\\d]{9}|[\\d]{12})$", message = "Invalid")
+    @NotBlank(message = "Not blank!")
+    private String customer_iDCard;
+    @Pattern(regexp = "^((\\(84\\)\\+)|(0))((91)|(90)|(84)|(85)|(93)|(94)|(96)|(38))[\\d]{7}$", message = "Invalid phone number")
+    @NotBlank(message = "Not blank!")
+    private String customer_phone;
+    @Pattern(regexp = "^(.+)@(.+)$", message = "Invalid email")
+    @NotBlank(message = "Not blank!")
+    private String customer_email;
+    @NotBlank(message = "Not blank!")
+    private String customer_address;
     @ManyToOne
     @JoinColumn(name = "customer_type_id")
     private CustomerType customerType;
-    private String customer_name;
-    private String customer_birthday;
-    private int customer_gender;
-    private String customer_iDCard;
-    private String customer_phone;
-    private String customer_email;
-    private String customer_address;
+    @ManyToOne
+    @JoinColumn(name = "gender_id")
+    private Gender customer_gender;
 
     @OneToMany(mappedBy = "customer")
     private Set<Contract> contracts;
@@ -26,22 +46,21 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(CustomerType customerType, String customer_name, String customer_birthday, int customer_gender, String customer_iDCard, String customer_phone, String customer_email, String customer_address) {
+    public Customer(CustomerType customerType, String customer_name, Date customer_birthday, String customer_iDCard, String customer_phone, String customer_email, String customer_address) {
         this.customerType = customerType;
         this.customer_name = customer_name;
         this.customer_birthday = customer_birthday;
-        this.customer_gender = customer_gender;
         this.customer_iDCard = customer_iDCard;
         this.customer_phone = customer_phone;
         this.customer_email = customer_email;
         this.customer_address = customer_address;
     }
 
-    public int getCustomer_id() {
+    public String getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(int customer_id) {
+    public void setCustomer_id(String customer_id) {
         this.customer_id = customer_id;
     }
 
@@ -61,20 +80,28 @@ public class Customer {
         this.customer_name = customer_name;
     }
 
-    public String getCustomer_birthday() {
+    public Date getCustomer_birthday() {
         return customer_birthday;
     }
 
-    public void setCustomer_birthday(String customer_birthday) {
+    public void setCustomer_birthday(Date customer_birthday) {
         this.customer_birthday = customer_birthday;
     }
 
-    public int getCustomer_gender() {
+    public Gender getCustomer_gender() {
         return customer_gender;
     }
 
-    public void setCustomer_gender(int customer_gender) {
+    public void setCustomer_gender(Gender customer_gender) {
         this.customer_gender = customer_gender;
+    }
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
     }
 
     public String getCustomer_iDCard() {
