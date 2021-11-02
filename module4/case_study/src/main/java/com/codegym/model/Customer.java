@@ -16,29 +16,29 @@ public class Customer {
     @Pattern(regexp = "^(KH-)[\\d]{4}$", message = "The customer ID has the format KH-XXXX (X : 0-9")
     @NotBlank(message = "Not Blank!")
     @Column(length = 50)
-    private String customer_id;
+    private String customerId;
     @NotBlank(message = "Not Blank!")
-    private String customer_name;
+    private String customerName;
     @Past(message = "Invalid")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date customer_birthday;
+    private Date customerBirthday;
     @Pattern(regexp = "^([\\d]{9}|[\\d]{12})$", message = "Invalid")
     @NotBlank(message = "Not blank!")
-    private String customer_iDCard;
+    private String customerIDCard;
     @Pattern(regexp = "^((\\(84\\)\\+)|(0))((91)|(90)|(84)|(85)|(93)|(94)|(96)|(38))[\\d]{7}$", message = "Invalid phone number")
     @NotBlank(message = "Not blank!")
-    private String customer_phone;
+    private String customerPhone;
     @Pattern(regexp = "^(.+)@(.+)$", message = "Invalid email")
     @NotBlank(message = "Not blank!")
-    private String customer_email;
+    private String customerEmail;
     @NotBlank(message = "Not blank!")
-    private String customer_address;
+    private String customerAddress;
     @ManyToOne
     @JoinColumn(name = "customer_type_id")
     private CustomerType customerType;
     @ManyToOne
     @JoinColumn(name = "gender_id")
-    private Gender customer_gender;
+    private Gender customerGender;
 
     @OneToMany(mappedBy = "customer")
     private Set<Contract> contracts;
@@ -46,22 +46,22 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(CustomerType customerType, String customer_name, Date customer_birthday, String customer_iDCard, String customer_phone, String customer_email, String customer_address) {
+    public Customer(CustomerType customerType, String customerName, Date customerBirthday, String customerIDCard, String customerPhone, String customerEmail, String customerAddress) {
         this.customerType = customerType;
-        this.customer_name = customer_name;
-        this.customer_birthday = customer_birthday;
-        this.customer_iDCard = customer_iDCard;
-        this.customer_phone = customer_phone;
-        this.customer_email = customer_email;
-        this.customer_address = customer_address;
+        this.customerName = customerName;
+        this.customerBirthday = customerBirthday;
+        this.customerIDCard = customerIDCard;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerAddress = customerAddress;
     }
 
-    public String getCustomer_id() {
-        return customer_id;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(String customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(String customer_id) {
+        this.customerId = customer_id;
     }
 
     public CustomerType getCustomerType() {
@@ -72,28 +72,28 @@ public class Customer {
         this.customerType = customerType;
     }
 
-    public String getCustomer_name() {
-        return customer_name;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+    public void setCustomerName(String customer_name) {
+        this.customerName = customer_name;
     }
 
-    public Date getCustomer_birthday() {
-        return customer_birthday;
+    public Date getCustomerBirthday() {
+        return customerBirthday;
     }
 
-    public void setCustomer_birthday(Date customer_birthday) {
-        this.customer_birthday = customer_birthday;
+    public void setCustomerBirthday(Date customer_birthday) {
+        this.customerBirthday = customer_birthday;
     }
 
-    public Gender getCustomer_gender() {
-        return customer_gender;
+    public Gender getCustomerGender() {
+        return customerGender;
     }
 
-    public void setCustomer_gender(Gender customer_gender) {
-        this.customer_gender = customer_gender;
+    public void setCustomerGender(Gender customer_gender) {
+        this.customerGender = customer_gender;
     }
 
     public Set<Contract> getContracts() {
@@ -104,35 +104,35 @@ public class Customer {
         this.contracts = contracts;
     }
 
-    public String getCustomer_iDCard() {
-        return customer_iDCard;
+    public String getCustomerIDCard() {
+        return customerIDCard;
     }
 
-    public void setCustomer_iDCard(String customer_iDCard) {
-        this.customer_iDCard = customer_iDCard;
+    public void setCustomerIDCard(String customer_iDCard) {
+        this.customerIDCard = customer_iDCard;
     }
 
-    public String getCustomer_phone() {
-        return customer_phone;
+    public String getCustomerPhone() {
+        return customerPhone;
     }
 
-    public void setCustomer_phone(String customer_phone) {
-        this.customer_phone = customer_phone;
+    public void setCustomerPhone(String customer_phone) {
+        this.customerPhone = customer_phone;
     }
 
-    public String getCustomer_email() {
-        return customer_email;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
-    public void setCustomer_email(String customer_email) {
-        this.customer_email = customer_email;
+    public void setCustomerEmail(String customer_email) {
+        this.customerEmail = customer_email;
     }
 
-    public String getCustomer_address() {
-        return customer_address;
+    public String getCustomerAddress() {
+        return customerAddress;
     }
 
-    public void setCustomer_address(String customer_address) {
-        this.customer_address = customer_address;
+    public void setCustomerAddress(String customer_address) {
+        this.customerAddress = customer_address;
     }
 }

@@ -11,6 +11,8 @@ public class Log {
     private Long id;
     private String nameMethod;
     private Date date;
+    private String nameUpdate;
+    private String iDUpDate;
 
     public Log() {
     }
@@ -18,6 +20,18 @@ public class Log {
     public Log(String nameMethod, Date date) {
         this.nameMethod = nameMethod;
         this.date = date;
+    }
+
+    public Log(String nameMethod, Date date, String nameUpdate, String iDUpDate) {
+        this.nameMethod = nameMethod;
+        this.date = date;
+        this.nameUpdate = nameUpdate;
+        this.iDUpDate = iDUpDate;
+    }
+
+    public Log(Date date, String nameUpdate) {
+        this.date = date;
+        this.nameUpdate = nameUpdate;
     }
 
     public Long getId() {
@@ -42,5 +56,21 @@ public class Log {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getNameUpdate() {
+        return nameUpdate;
+    }
+
+    public void setNameUpdate(String nameUpdate) {
+        this.nameUpdate = nameUpdate;
+    }
+
+    public String getiDUpDate() {
+        return iDUpDate;
+    }
+
+    public void setiDUpDate(String iDUpDate) {
+        this.iDUpDate = iDUpDate;
     }
 }

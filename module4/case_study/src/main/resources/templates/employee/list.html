@@ -43,21 +43,21 @@
                                         <th:block th:each="employee, index : ${employees}">
                                             <tr>
                                                 <td th:id="'employeeId' + ${index.index}"
-                                                    th:text="${employee.employee_id}"></td>
+                                                    th:text="${employee.employeeId}"></td>
                                                 <td th:id="'employeeName' + ${index.index}"
-                                                    th:text="${employee.employee_name}"></td>
-                                                <td th:text="${employee.employee_gender.gender}"></td>
-                                                <td th:text="${employee.employee_birthday}"></td>
-                                                <td th:text="${employee.employee_phone}"></td>
-                                                <td th:text="${employee.employee_email}"></td>
-                                                <td th:text="${employee.employee_address}"></td>
-                                                <td th:text="${employee.employee_id_card}"></td>
-                                                <td th:text="${employee.employee_salary}"></td>
+                                                    th:text="${employee.employeeName}"></td>
+                                                <td th:text="${employee.employeeGender.gender}"></td>
+                                                <td th:text="${employee.employeeBirthday}"></td>
+                                                <td th:text="${employee.employeePhone}"></td>
+                                                <td th:text="${employee.employeeEmail}"></td>
+                                                <td th:text="${employee.employeeAddress}"></td>
+                                                <td th:text="${employee.employeeIDCard}"></td>
+                                                <td th:text="${employee.employeeSalary}"></td>
                                                 <td th:text="${employee.division.division_name}"></td>
                                                 <td th:text="${employee.position.position_name}"></td>
                                                 <td th:text="${employee.educationDegree.education_degree_name}"></td>
                                                 <td>
-                                                    <form method="get" th:action="@{/edit-employee/__${employee.employee_id}__ }">
+                                                    <form method="get" th:action="@{/edit-employee/__${employee.employeeId}__ }">
                                                         <button type="submit" class="btn btn-primary">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </button>

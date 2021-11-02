@@ -8,13 +8,13 @@ import java.util.List;
 public class Gender {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int gender_id;
+    private int genderId;
     private String gender;
 
-    @OneToMany(mappedBy = "customer_gender")
+    @OneToMany(mappedBy = "customerGender")
     private List<Customer> customerList;
 
-    @OneToMany(mappedBy = "employee_gender")
+    @OneToMany(mappedBy = "employeeGender")
     private List<Employee> employeeList;
 
     public Gender() {
@@ -26,18 +26,18 @@ public class Gender {
         this.employeeList = employeeList;
     }
 
-    public Gender(int gender_id, String gender, List<Customer> customerList) {
-        this.gender_id = gender_id;
+    public Gender(int genderId, String gender, List<Customer> customerList) {
+        this.genderId = genderId;
         this.gender = gender;
         this.customerList = customerList;
     }
 
-    public int getGender_id() {
-        return gender_id;
+    public int getGenderId() {
+        return genderId;
     }
 
-    public void setGender_id(int gender_id) {
-        this.gender_id = gender_id;
+    public void setGenderId(int gender_id) {
+        this.genderId = gender_id;
     }
 
     public String getGender() {

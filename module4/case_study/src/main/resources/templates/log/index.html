@@ -12,16 +12,23 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="panel-heading">
+                        <h3 class="section-title">Logs</h3>
+                    </div>
                     <table border="1" class="table table-hover">
                         <tr>
                             <th>Method</th>
                             <th>Time</th>
+                            <th>Name object</th>
+                            <th>ID object</th>
                             <th></th>
                         </tr>
                         <th:block th:each="log : ${logs}">
                             <tr>
                                 <td th:text="${log.nameMethod}"></td>
                                 <td th:text="${log.date}"></td>
+                                <td th:text="${log.iDUpDate}"></td>
+                                <td th:text="${log.nameUpdate}"></td>
                                 <td><a class="btn btn-danger" th:href="@{/delete-log/__${log.id}__}">Delete</a></td>
                             </tr>
                         </th:block>

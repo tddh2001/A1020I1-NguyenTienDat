@@ -13,7 +13,13 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <!--                    <a th:href="@{/create-customer}" class="badge badge-dark">Create Customer</a>-->
+                    <form class="form-inline d-flex justify-content-center form-control-sm">
+                        <input class="form-control form-control-sm mr-3 w-75" name="s" type="text" placeholder="Search by name" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <br>
                     <form method="get" th:action="@{/create-customer}">
                         <button type="submit" class="btn btn-success">
                             <i class="fa fa-plus-square"></i> Create
@@ -41,18 +47,18 @@
                                         <th:block th:each="customer, index : ${customers}">
                                             <tr>
                                                 <td th:id="'customerId' + ${index.index}"
-                                                    th:text="${customer.customer_id}"></td>
+                                                    th:text="${customer.customerId}"></td>
                                                 <td th:id="'customerName' + ${index.index}"
-                                                    th:text="${customer.customer_name}"></td>
-                                                <td th:text="${customer.customer_gender.gender}"></td>
-                                                <td th:text="${customer.customer_birthday}"></td>
-                                                <td th:text="${customer.customer_phone}"></td>
-                                                <td th:text="${customer.customer_email}"></td>
-                                                <td th:text="${customer.customer_address}"></td>
-                                                <td th:text="${customer.customer_iDCard}"></td>
+                                                    th:text="${customer.customerName}"></td>
+                                                <td th:text="${customer.customerGender.gender}"></td>
+                                                <td th:text="${customer.customerBirthday}"></td>
+                                                <td th:text="${customer.customerPhone}"></td>
+                                                <td th:text="${customer.customerEmail}"></td>
+                                                <td th:text="${customer.customerAddress}"></td>
+                                                <td th:text="${customer.customerIDCard}"></td>
                                                 <td th:text="${customer.customerType.customer_type_name}"></td>
                                                 <td>
-                                                    <form method="get" th:action="@{/edit-customer/__${customer.customer_id}__ }">
+                                                    <form method="get" th:action="@{/edit-customer/__${customer.customerId}__ }">
                                                         <button type="submit" class="btn btn-primary">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </button>
@@ -73,6 +79,15 @@
                                             </tr>
                                         </th:block>
                                     </table>
+                                    <div>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination">
+                                                <li class="page-item"><a class="page-link" th:href="@{'/customer-list'(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">Previous</a></li>
+                                                <li class="page-item"><span class="page-link" th:text="${customers.number + 1}"></span><span class="page-link" th:text="${customers.totalPages}"></span></li>
+                                                <li class="page-item"><a th:href="@{'/customer-list'(page=${customers.number + 1})}" th:if="${customers.hasNext()}">Next</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>
