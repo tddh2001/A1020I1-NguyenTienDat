@@ -1,0 +1,9 @@
+<div *ngIf="studentDetail">
+  <h1>Student Information</h1>
+  <p>ID: {{studentDetail.id}}</p>
+  <p>Name: {{studentDetail.name}}</p>
+  <p>Age: {{studentDetail.age}}</p>
+  <p>Mark: {{studentDetail.mark}}</p>
+  <label>Edit mark: <input type="number" (change)="setMark($event)" min="0" max="10"></label>
+  <img [src]="studentDetail.avatar" width="300px" height="300px">
+</div>
