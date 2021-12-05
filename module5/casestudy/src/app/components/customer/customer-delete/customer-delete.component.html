@@ -1,0 +1,11 @@
+<h1 mat-dialog-title class="text-danger">Are you sure?</h1>
+<mat-dialog-content>
+  <ul>
+    <li>ID: {{customer.id}}</li>
+    <li>Name: {{customer.name}}</li>
+  </ul>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close class="btn btn-primary me-2">Cancel</button>
+  <button mat-raised-button class="btn btn-danger" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>

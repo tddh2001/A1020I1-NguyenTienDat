@@ -1,0 +1,35 @@
+<h1 class="text-center m-3">Customer List</h1>
+
+<table class="table table-striped table-active table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Type customer</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>#</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.typeCustomer.name}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.phone}}</td>
+    <td>
+      <button class="btn btn-primary me-3" (click)="openDetail(customer)">Detail</button>
+      <button class="btn btn-danger" (click)="openDelete(customer)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="container-fluid">
+  <div class="col-8">
+    <app-customer-create></app-customer-create>
+  </div>
+  <div class="col-4">
+
+  </div>
+</div>
