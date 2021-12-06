@@ -1,0 +1,54 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Tiến Đạt",
+      "typeCustomer": {
+        "id" : 5,
+        "name" : "Member"
+      },
+
+    "dateOfBirth": "2001-11-18",
+    "iDCard": "197385811",
+    "email": "ngtiendat@gmail.com",
+    "phone": "0858158157",
+    "address": "Quảng Trị"
+    },
+    {
+      "id": 2,
+      "name": "Trần Vũ Hồng Đan",
+      "typeCustomer": {
+        "id" : 1,
+        "name" : "Diamond"
+      },
+    "dateOfBirth": "2001-12-18",
+    "iDCard": "198723823",
+    "email": "tvhdan@gmail.com",
+    "phone": "0912345678",
+    "address": "Kon Tum"
+    }
+  ],
+
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

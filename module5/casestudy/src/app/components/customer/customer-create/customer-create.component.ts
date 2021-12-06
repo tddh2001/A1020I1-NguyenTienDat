@@ -4,6 +4,8 @@ import {Customer} from '../../../model/Customer';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TypeCustomerDAO} from '../../../dao/TypeCustomerDAO';
 import {min} from 'rxjs/operators';
+import {CustomerService} from '../../../service/customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-create',
@@ -13,7 +15,7 @@ import {min} from 'rxjs/operators';
 export class CustomerCreateComponent implements OnInit {
   customerForm: FormGroup;
 
-  constructor() { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   typeCustomers = TypeCustomerDAO;
 
@@ -32,6 +34,9 @@ export class CustomerCreateComponent implements OnInit {
   }
 
   getCustomerValue(){
-    CustomerDAO.push(this.customerForm.value);
+    if (this.customerForm.valid){
+      this.customerService.addCustomer(this.customerForm.value);
+      this.router.navigateByUrl('/');
+    }
   }
 }

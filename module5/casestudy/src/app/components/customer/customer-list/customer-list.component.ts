@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {Customer} from '../../../model/Customer';
 import {CustomerDetailComponent} from '../customer-detail/customer-detail.component';
 import {CustomerDeleteComponent} from '../customer-delete/customer-delete.component';
+import {CustomerService} from '../../../service/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -13,9 +14,16 @@ import {CustomerDeleteComponent} from '../customer-delete/customer-delete.compon
 export class CustomerListComponent implements OnInit {
 
   customers = CustomerDAO;
-  constructor(public dialog: MatDialog) { }
+  // customers: Customer[];
+  constructor(public dialog: MatDialog, private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    this.customers = this.customerService.getAllCustomer();
+    // this.customerService.getAllCustomer().subscribe(
+    //   (data) => this.customers = data,
+    //   (error => console.log('Kết nối có lỗi')),
+    //   (() => console.log('Hoàn thành kết nối đến backend'))
+    // );
   }
 
   openDetail(customer: Customer){

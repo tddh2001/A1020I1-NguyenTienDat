@@ -37,8 +37,8 @@
   <div class="form-group">
     <label>Phone: </label>
     <input formControlName="phone" class="form-control" type="text">
-    <div class="alert alert-danger" *ngIf="customerForm.get('phone').invalid && customerForm.get('phone').touched">Not blank!</div>
-
+    <div class="alert alert-danger" *ngIf="customerForm.get('phone').hasError('required') && customerForm.get('phone').touched">Not blank!</div>
+<!--    <div class="alert alert-danger" *ngIf="customerForm.get('phone').hasError('pattern') && customerForm.get('phone').touched">Phone invalid!</div>-->
   </div>
   <div class="form-group">
     <label>Address: </label>
