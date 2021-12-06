@@ -13,34 +13,39 @@ import {CustomerService} from '../../../service/customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  customers = CustomerDAO;
+  // customers = CustomerDAO;
   // customers: Customer[];
+  collection: any;
+
   constructor(public dialog: MatDialog, private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.customers = this.customerService.getAllCustomer();
-    // this.customerService.getAllCustomer().subscribe(
-    //   (data) => this.customers = data,
-    //   (error => console.log('Kết nối có lỗi')),
-    //   (() => console.log('Hoàn thành kết nối đến backend'))
-    // );
-  }
-
-  openDetail(customer: Customer){
-    const dialogRef = this.dialog.open(CustomerDetailComponent, {
-      width: '400px',
-      data: customer
+    // this.customers = this.customerService.getAllCustomer();
+    this.customerService.getAllCustomer().subscribe( data => {
+      this.collection = data;
     });
   }
 
-  openDelete(customer: Customer){
-    const dialogRef = this.dialog.open(CustomerDeleteComponent, {
-      data: customer
+  openDetail(id){
+    this.customerService.findById(id).subscribe(data => {
+      const dialogRef = this.dialog.open(CustomerDetailComponent, {
+        width: '400px',
+        data: data
+      });
     });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.customers = this.customers.filter(item => item !== customer);
-      }
+  }
+
+  openDelete(id){
+    this.customerService.findById(id).subscribe(data => {
+      const dialogRef = this.dialog.open(CustomerDeleteComponent, {
+        width: '300px',
+        height: '200px',
+        data : data
+      });
+      dialogRef.afterClosed().subscribe( () => {
+        this.ngOnInit();
+      });
     });
+
   }
 }

@@ -4,31 +4,29 @@
       "id": 1,
       "name": "Nguyễn Tiến Đạt",
       "typeCustomer": {
-        "id" : 5,
-        "name" : "Member"
+        "id": 1,
+        "name": "Diamond"
       },
-
-    "dateOfBirth": "2001-11-18",
-    "iDCard": "197385811",
-    "email": "ngtiendat@gmail.com",
-    "phone": "0858158157",
-    "address": "Quảng Trị"
+      "dateOfBirth": "2001-11-18",
+      "iDCard": "197385811",
+      "email": "ntdat@gmail.com",
+      "phone": "0858158157",
+      "address": "Quảng Trị"
     },
     {
       "id": 2,
       "name": "Trần Vũ Hồng Đan",
       "typeCustomer": {
-        "id" : 1,
-        "name" : "Diamond"
+        "id": 1,
+        "name": "Diamond"
       },
-    "dateOfBirth": "2001-12-18",
-    "iDCard": "198723823",
-    "email": "tvhdan@gmail.com",
-    "phone": "0912345678",
-    "address": "Kon Tum"
+      "dateOfBirth": "2001-12-18",
+      "iDCard": "198723823",
+      "email": "tvhdan@gmail.com",
+      "phone": "0912345678",
+      "address": "Kon Tum"
     }
   ],
-
   "typeCustomer": [
     {
       "id": 1,

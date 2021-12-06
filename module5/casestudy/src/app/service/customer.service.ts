@@ -9,20 +9,39 @@ export class CustomerService {
 
   customers: Customer[] = CustomerDAO;
   // customers: Customer[] = [];
-  // readonly API_URL = 'http://localhost:3000/';
 
-  // constructor(private httpClient: HttpClient) { }
-  constructor() { }
+  customerURL = 'http://localhost:3000/customers';
+  customerTypeURL = 'http://localhost:3000/typeCustomer';
 
-  getAllCustomer(){
-    return this.customers;
-  }
+  constructor(private httpClient: HttpClient) { }
+  // constructor() { }
 
-  // getAllCustomer(): Observable<Customer[]>{
-  //   return this.httpClient.get<Customer[]>(this.API_URL);
+  // getAllCustomer(){
+  //   return this.customers;
   // }
 
-  addCustomer(customer: Customer){
-    this.customers.push(customer);
+  getAllCustomer(): Observable<Customer[]>{
+    // @ts-ignore
+    return this.httpClient.get(this.customerURL);
   }
+
+  getAllCustomerType(): Observable<Customer[]>{
+    // @ts-ignore
+    return this.httpClient.get(this.customerTypeURL);
+  }
+
+  addCustomer(customer){
+    return this.httpClient.post(this.customerURL, customer);
+    // this.httpClient.put(this.customerURL);
+  }
+
+  findById(id){
+    return this.httpClient.get(this.customerURL + '/' + id);
+  }
+
+  deleteCustomer(id){
+    return this.httpClient.delete(this.customerURL + '/' + id);
+  }
+
+
 }

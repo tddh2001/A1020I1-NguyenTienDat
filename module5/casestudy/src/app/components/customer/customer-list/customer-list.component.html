@@ -12,15 +12,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customer of customers">
+  <tr *ngFor="let customer of collection">
     <td>{{customer.id}}</td>
     <td>{{customer.name}}</td>
     <td>{{customer.typeCustomer.name}}</td>
     <td>{{customer.email}}</td>
     <td>{{customer.phone}}</td>
     <td>
-      <button class="btn btn-primary me-3" (click)="openDetail(customer)">Detail</button>
-      <button class="btn btn-danger" (click)="openDelete(customer)">Delete</button>
+      <button class="btn btn-primary me-3" (click)="openDetail(customer.id)">Detail</button>
+      <button class="btn btn-danger" (click)="openDelete(customer.id)">Delete</button>
     </td>
   </tr>
   </tbody>

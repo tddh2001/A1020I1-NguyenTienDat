@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CustomerService} from './service/customer.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,9 @@ import {CustomerService} from './service/customer.service';
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    HttpClientModule
+    ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
 })
