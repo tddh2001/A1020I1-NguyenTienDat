@@ -10,7 +10,8 @@
 <hr/>
 <h3>User dashboard</h3>
 <div sec:authorize="isAuthenticated()">
-    <b>Welcome!<span sec:authentication="principal.username"></span></b>
+    <b>Welcome!
+        <span sec:authentication="principal.username"></span></b>
 </div>
 <br/>
 <div sec:authorize="isAuthenticated()">

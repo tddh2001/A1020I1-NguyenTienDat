@@ -48,8 +48,8 @@ public class Employee {
     @JoinColumn(name = "username")
     private User user;
 
-    @OneToMany(mappedBy = "employee")
-    private Set<Contract> contracts;
+//    @OneToMany(mappedBy = "employee")
+//    private Set<Contract> contracts;
 
     public Employee() {
     }
@@ -91,13 +91,13 @@ public class Employee {
         this.employeeGender = employee_gender;
     }
 
-    public Set<Contract> getContracts() {
-        return contracts;
-    }
-
-    public void setContracts(Set<Contract> contracts) {
-        this.contracts = contracts;
-    }
+//    public Set<Contract> getContracts() {
+//        return contracts;
+//    }
+//
+//    public void setContracts(Set<Contract> contracts) {
+//        this.contracts = contracts;
+//    }
 
     public int getEmployeeId() {
         return employeeId;

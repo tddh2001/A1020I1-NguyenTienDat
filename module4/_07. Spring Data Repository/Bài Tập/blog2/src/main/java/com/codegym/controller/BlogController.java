@@ -31,19 +31,6 @@ public class BlogController {
     }
 
     @GetMapping("/")
-//    public String index(Model model,@RequestParam("category") Optional<String> category,@RequestParam("search") Optional<String> s, @PageableDefault(value = 4) Pageable pageable){
-//        Page<Blog> blogs;
-//        if (category.isPresent()){
-//            blogs = blogService.findAllByCategoryContaining(category, pageable);
-//        } else
-//        if (s.isPresent()){
-//            blogs = blogService.findAllByFirstNameContaining(s.get(), pageable);
-//        }else {
-//            blogs = blogService.findAll(pageable);
-//        }
-//        model.addAttribute("blog", blogs);
-//        return "/blog/index";
-//    }
     public ModelAndView index(@RequestParam("search") Optional<String> s, @PageableDefault(value = 4) Pageable pageable){
         Page<Blog> blogs;
         ModelAndView modelAndView = new ModelAndView("/blog/index");

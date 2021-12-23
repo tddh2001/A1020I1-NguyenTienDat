@@ -24,7 +24,7 @@
                                         <div class="container ">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <form class="form-light mt-20" role="form">
+                                                    <form class="form-light mt-20" method="post" th:action="@{/create-employee}" th:object="${employee}" role="form">
                                                         <div class="form-group">
                                                             <label>Name</label>
                                                             <input th:field="*{employeeName}" type="text"
